@@ -1,13 +1,12 @@
 import type { Config } from "@measured/puck";
 import { Layout, LayoutProps } from "./app/components/layout.puck";
-import { ServicesPage, ServicesPageProps } from "./app/components/services-layout.puck";
+import { ServicesPage } from "./app/components/services-layout.puck";
 import { Todos, TodosProps } from "./app/components/todos";
 
 type Props = {
   HeadingBlock: { title: string };
   Todos: TodosProps;
   Layout: LayoutProps;
-  ServicesPage: ServicesPageProps;
 };
 
 export const config: Config<Props> = {
@@ -90,8 +89,10 @@ export const config: Config<Props> = {
       render: Todos,
     },
     Layout,
-    ServicesPage,
   },
 };
 
 export default config;
+
+// Export ServicesPage séparément pour l'utiliser dans les routes /services
+export { ServicesPage };
